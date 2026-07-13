@@ -622,9 +622,9 @@ def subir_a_google_sheets(df, nombre_tabla, nombre_hoja="sheet1", retries=3):
                 data_final = combined_df.applymap(serializar_datos)
                 
                 # --- 6. SUBIDA FINAL ---
-                sheet.clear()
-                valores_a_subir = [data_final.columns.values.tolist()] + data_final.values.tolist()
-                sheet.update(valores_a_subir, value_input_option='USER_ENTERED')
+                # sheet.clear()
+                # valores_a_subir = [data_final.columns.values.tolist()] + data_final.values.tolist()
+                # sheet.update(valores_a_subir, value_input_option='USER_ENTERED')
                 
                 log(f"✅ Hoja '{nombre_tabla}' actualizada.")
                 log(f"📊 Se agregaron {conteo_reales} filas nuevas.")
@@ -3386,7 +3386,7 @@ from googleapiclient.http import MediaIoBaseUpload
 MAX_INTENTOS = 10
 ESPERA_BASE = 15  # segundos
 
-def obtener_df_con_reintentos(sheet_name, tab_name, max_intentos=MAX_INTENTOS):
+ def obtener_df_con_reintentos(sheet_name, tab_name, max_intentos=MAX_INTENTOS):
     """Lee el DataFrame con reintentos ante errores 429."""
     for intento in range(1, max_intentos + 1):
         try:
@@ -3479,8 +3479,8 @@ try:
         nombre_archivo = "snapshot_eventos.json"
         CARPETA_ID = "1Ds_NaXnETHmocUGQ2RVsnnxEeXfiGf_R"
 
-        subir_json_con_reintentos(drive_service, contenido_json, nombre_archivo, CARPETA_ID)
-        log(f"  ✅ Snapshot finalizado: {nombre_archivo} → {len(registros)} eventos")
+        # subir_json_con_reintentos(drive_service, contenido_json, nombre_archivo, CARPETA_ID)
+        #log(f"  ✅ Snapshot finalizado: {nombre_archivo} → {len(registros)} eventos")
 
 except Exception as e:
     import traceback
