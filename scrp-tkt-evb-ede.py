@@ -3490,8 +3490,8 @@ except Exception as e:
 
 
 
-#destinatarios=['meabeldano@cordobaacelera.com.ar']
-destinatarios=['furrutia@cordobaacelera.com.ar','meabeldano@cordobaacelera.com.ar','pgonzalez@cordobaacelera.com.ar']
+#destinatarios=['rmansilla@cordobaacelera.com.ar']
+#destinatarios=['rmansilla@cordobaacelera.com.ar','meabeldano@cordobaacelera.com.ar','pgonzalez@cordobaacelera.com.ar']
 contenido_final_log = log_buffer.getvalue()
 enviar_log_smtp(contenido_final_log, destinatarios)
 
