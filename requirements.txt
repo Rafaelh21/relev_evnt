@@ -1,0 +1,14 @@
+selenium
+webdriver-manager
+pandas
+beautifulsoup4
+gspread
+oauth2client
+openpyxl
+requests
+numpy
+google-api-python-client
+google-auth-httplib2
+google-auth-oauthlib
+joblib
+scikit-learn==1.6.1
