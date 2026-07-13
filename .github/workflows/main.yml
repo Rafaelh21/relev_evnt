@@ -1,0 +1,28 @@
+name: Ejecutar Scraper de Eventos Córdoba
+
+on:
+  workflow_dispatch: # Esto es lo que crea el botón de "Run workflow" para correrlo a mano
+
+jobs:
+  run-scraper:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Descargar el código
+      uses: actions/checkout@v3
+
+    - name: Configurar Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+
+    - name: Instalar librerías
+      run: |
+        python -m pip install --upgrade pip
+        pip install pandas numpy gspread google-api-python-client google-auth-oauthlib selenium webdriver-manager
+
+    - name: Ejecutar el Scraper
+      env:
+        GCP_SERVICE_ACCOUNT_JSON: ${{ secrets.GCP_SERVICE_ACCOUNT_JSON }}
+        EMAIL_APP_PASSWORD: ${{ secrets.EMAIL_APP_PASSWORD }}
+      run: python scrp-tkt-evb-ede.py
