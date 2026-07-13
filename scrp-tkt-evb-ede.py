@@ -536,6 +536,8 @@ def iniciar_driver():
     return webdriver.Chrome(service=service, options=chrome_options)
 
 def subir_a_google_sheets(df, nombre_tabla, nombre_hoja="sheet1", retries=3):
+    print(f"🛑 MODO PRUEBA: Omitiendo conexión a Sheets para '{nombre_tabla}'.")
+    return True
     import numpy as np
     import time
     import pandas as pd
@@ -1520,7 +1522,7 @@ def enviar_log_smtp(cuerpo_log, lista_destinatarios):
     """Envía el log acumulado a múltiples correos usando SMTP (reemplaza Gmail API)."""
     try:
         # Configuración desde variables de entorno para seguridad
-        remitente = "meabeldano@cordobaacelera.com.ar"  # El mail que generó la App Password
+        remitente = "rmansilla@cordobaacelera.com.ar"  # El mail que generó la App Password
         password = os.environ.get('EMAIL_APP_PASSWORD')
         
         if not password:
@@ -3377,7 +3379,7 @@ def obtener_df_de_sheets(nombre_tabla, nombre_hoja):
 
 # --- 6. SNAPSHOT JSON EN DRIVE ---
 print("\n🗂️ Generando snapshot JSON en Drive...")
-
+'''
 import os, json as json_lib, io, time
 from google.oauth2 import service_account
 from googleapiclient.discovery import build
@@ -3487,11 +3489,11 @@ except Exception as e:
     print(f"  ❌ Error fatal en snapshot JSON: {e}")
     print(traceback.format_exc())
 
+'''
 
 
-
-#destinatarios=['rmansilla@cordobaacelera.com.ar']
-#destinatarios=['rmansilla@cordobaacelera.com.ar','meabeldano@cordobaacelera.com.ar','pgonzalez@cordobaacelera.com.ar']
+destinatarios=['rmansilla@cordobaacelera.com.ar']
+destinatarios=['rmansilla@cordobaacelera.com.ar','meabeldano@cordobaacelera.com.ar','pgonzalez@cordobaacelera.com.ar']
 contenido_final_log = log_buffer.getvalue()
 enviar_log_smtp(contenido_final_log, destinatarios)
 
