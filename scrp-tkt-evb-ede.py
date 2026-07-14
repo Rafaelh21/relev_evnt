@@ -3386,7 +3386,7 @@ from googleapiclient.http import MediaIoBaseUpload
 MAX_INTENTOS = 10
 ESPERA_BASE = 15  # segundos
 
- def obtener_df_con_reintentos(sheet_name, tab_name, max_intentos=MAX_INTENTOS):
+def obtener_df_con_reintentos(sheet_name, tab_name, max_intentos=MAX_INTENTOS):
     """Lee el DataFrame con reintentos ante errores 429."""
     for intento in range(1, max_intentos + 1):
         try:
