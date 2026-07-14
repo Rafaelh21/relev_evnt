@@ -536,8 +536,6 @@ def iniciar_driver():
     return webdriver.Chrome(service=service, options=chrome_options)
 
 def subir_a_google_sheets(df, nombre_tabla, nombre_hoja="sheet1", retries=3):
-    print(f"🛑 MODO PRUEBA: Omitiendo conexión a Sheets para '{nombre_tabla}'.")
-    return True
     import numpy as np
     import time
     import pandas as pd
