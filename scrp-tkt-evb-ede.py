@@ -3479,7 +3479,7 @@ try:
         # 2. Subir a Drive con reintentos
         drive_service = build('drive', 'v3', credentials=creds)
         nombre_archivo = "snapshot_eventos.json"
-        CARPETA_ID = "1Ds_NaXnETHmocUGQ2RVsnnxEeXfiGf_R"
+        CARPETA_ID = "1m2NZgQXznGYQU7ZAom05_2Ibu2PogyyC"
 
         # subir_json_con_reintentos(drive_service, contenido_json, nombre_archivo, CARPETA_ID)
         #log(f"  ✅ Snapshot finalizado: {nombre_archivo} → {len(registros)} eventos")
