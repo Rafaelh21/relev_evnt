@@ -3379,7 +3379,7 @@ def obtener_df_de_sheets(nombre_tabla, nombre_hoja):
 
 # --- 6. SNAPSHOT JSON EN DRIVE ---
 print("\n🗂️ Generando snapshot JSON en Drive...")
-'''
+
 import os, json as json_lib, io, time
 from google.oauth2 import service_account
 from googleapiclient.discovery import build
@@ -3489,7 +3489,7 @@ except Exception as e:
     print(f"  ❌ Error fatal en snapshot JSON: {e}")
     print(traceback.format_exc())
 
-'''
+
 
 
 destinatarios=['rmansilla@cordobaacelera.com.ar']
